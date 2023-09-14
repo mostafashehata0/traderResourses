@@ -1,0 +1,234 @@
+<div dir="rtl" class="times container">
+  <!-- start setttings -->
+  <div class="settings pt-2 pe-1 row">
+    <div class="discreption col-8">
+      <h5>حدد مواعيد العمل للمورد</h5>
+      <p>
+        تكوين إعدادات الأسبوع الخاص بك هنا. ما عليك سوى تحريك أشرطة التمرير
+        وإضافة / إزالة أوقات الراحة لإعداد ساعات العمل.
+      </p>
+    </div>
+    <div class="buttons row p-2 col-4">
+      <div class="">
+        <button type="button" class="btn pt-2 pe-1 ps-1 col-6">
+          إعدادات متقدمة
+        </button>
+        <button type="button" class="btn btn-primary pt-2 pe-1 ps-1 col-6">
+          إعدادات تقليدية
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- end setttings -->
+  <!-- start days -->
+  <div class="days me-3">
+    <div class="row mt-3 mb-2">
+      <div class="col-1 ms-3">
+        <div class="form-check form-switch">
+          <input
+            (click)="appareSat()"
+            class="form-check-input switch m-0"
+            type="checkbox"
+            role="switch"
+            id="flexSwitchCheckChecked"
+          />
+        </div>
+      </div>
+      <div class="day col-1">
+        <p class="">السبت</p>
+      </div>
+      <div *ngIf="selectsat" class="col-7 row">
+        <div class="starting col-2 ms-1 me-2">
+          <p>وقت البدء</p>
+          <div class="d-flex justify-content-between start p-2">
+            <p>{{ startingTime }} صباحا</p>
+            <img src="/assets/clock.svg" alt="" />
+          </div>
+        </div>
+        <div class="ending col-3 me-1 ms-1">
+          <p>وقت الانتهاء</p>
+
+          <div class="d-flex justify-content-between start p-2">
+            <p>{{ hour }}:{{ minute }}</p>
+            <img src="/assets/clock.svg" alt="sss" />
+          </div>
+
+          <div class="counter">
+            <div class="d-flex justify-content-around time">
+              <div class="d-flex flex-column mb-3">
+                <label for="minute">دقيقة</label>
+                <select id="minute" name="minute" [(ngModel)]="minute">
+                  <option *ngFor="let minute of minutes" [value]="minute">
+                    {{ minute }}
+                  </option>
+                </select>
+              </div>
+              <div class="d-flex flex-column mb-3">
+                <label for="hour">ساعة</label>
+                <select id="hour" name="hour" [(ngModel)]="hour">
+                  <option *ngFor="let hour of hours" [value]="hour">
+                    {{ hour }}
+                  </option>
+                </select>
+              </div>
+            </div>
+            <div class="buttons row">
+              <button type="button" class="btn btn-primary col-5 ms-1">
+                الوقت الحالى
+              </button>
+              <button type="button" class="btn btn-primary col-5 me-1">
+                حفظ الوقت
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-1 add">
+          <img class=" " src="/assets/add.svg" alt="" />
+        </div>
+
+        <div class="copy col-1 me-1">
+          <img src="/assets/Group.svg" alt="" />
+        </div>
+      </div>
+    </div>
+    <div *ngFor="let day of days" class="row mt-3 mb-2">
+      <div class="col-1 ms-3">
+        <div class="form-check form-switch">
+          <input
+            class="form-check-input switch m-0"
+            type="checkbox"
+            role="switch"
+            id="flexSwitchCheckChecked"
+            checked
+          />
+        </div>
+      </div>
+      <div class="day col-1">
+        <p class="">{{ day }}</p>
+      </div>
+      <div class="col-7 row">
+        <div class="starting col-2 ms-1 me-2">
+          <p>وقت البدء</p>
+          <div class="d-flex justify-content-between start p-2">
+            <p>{{ startingTime }} صباحا</p>
+            <img src="/assets/clock.svg" alt="" />
+          </div>
+        </div>
+        <div class="ending col-3 me-1 ms-1">
+          <p>وقت الانتهاء</p>
+
+          <div class="d-flex justify-content-between start p-2">
+            <p>{{ hour }}:{{ minute }}</p>
+            <img src="/assets/clock.svg" alt="sss" />
+          </div>
+
+          <div class="counter">
+            <div class="d-flex justify-content-around time">
+              <div class="d-flex flex-column mb-3">
+                <label for="minute">دقيقة</label>
+                <select id="minute" name="minute" [(ngModel)]="minute">
+                  <option *ngFor="let minute of minutes" [value]="minute">
+                    {{ minute }}
+                  </option>
+                </select>
+              </div>
+              <div class="d-flex flex-column mb-3">
+                <label for="hour">ساعة</label>
+                <select id="hour" name="hour" [(ngModel)]="hour">
+                  <option *ngFor="let hour of hours" [value]="hour">
+                    {{ hour }}
+                  </option>
+                </select>
+              </div>
+            </div>
+            <div class="buttons row">
+              <button type="button" class="btn btn-primary col-5 ms-1">
+                الوقت الحالى
+              </button>
+              <button type="button" class="btn btn-primary col-5 me-1">
+                حفظ الوقت
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-1 add">
+          <img class=" " src="/assets/add.svg" alt="" />
+        </div>
+
+        <div class="copy col-1 me-1">
+          <img src="/assets/Group.svg" alt="" />
+        </div>
+      </div>
+    </div>
+    <div class="friyday row mt-3 mb-2">
+      <div class="col-1 ms-3">
+        <div class="form-check form-switch">
+          <input
+            (click)="appareFri()"
+            class="form-check-input switch m-0"
+            type="checkbox"
+            role="switch"
+            id="flexSwitchCheckChecked"
+          />
+        </div>
+      </div>
+      <div class="day col-1">
+        <p class="">الجمعة</p>
+      </div>
+      <div *ngIf="selecctFri" class="col-7 row">
+        <div class="starting col-2 ms-1 me-2">
+          <p>وقت البدء</p>
+          <div class="d-flex justify-content-between start p-2">
+            <p>{{ startingTime }} صباحا</p>
+            <img src="/assets/clock.svg" alt="" />
+          </div>
+        </div>
+        <div class="ending col-3 me-1 ms-1">
+          <p>وقت الانتهاء</p>
+
+          <div class="d-flex justify-content-between start p-2">
+            <p>{{ hour }}:{{ minute }}</p>
+            <img src="/assets/clock.svg" alt="sss" />
+          </div>
+
+          <div class="counter">
+            <div class="d-flex justify-content-around time">
+              <div class="d-flex flex-column mb-3">
+                <label for="minute">دقيقة</label>
+                <select id="minute" name="minute" [(ngModel)]="minute">
+                  <option *ngFor="let minute of minutes" [value]="minute">
+                    {{ minute }}
+                  </option>
+                </select>
+              </div>
+              <div class="d-flex flex-column mb-3">
+                <label for="hour">ساعة</label>
+                <select id="hour" name="hour" [(ngModel)]="hour">
+                  <option *ngFor="let hour of hours" [value]="hour">
+                    {{ hour }}
+                  </option>
+                </select>
+              </div>
+            </div>
+            <div class="buttons row">
+              <button type="button" class="btn btn-primary col-5 ms-1">
+                الوقت الحالى
+              </button>
+              <button type="button" class="btn btn-primary col-5 me-1">
+                حفظ الوقت
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-1 add">
+          <img class=" " src="/assets/add.svg" alt="" />
+        </div>
+
+        <div class="copy col-1 me-1">
+          <img src="/assets/Group.svg" alt="" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end days -->
+</div>

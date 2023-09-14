@@ -1,0 +1,127 @@
+.trade-info {
+  background-color: white;
+  border-radius: 15px;
+}
+
+.trade-info p {
+  font-family: Times New Roman;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #92a1ad;
+}
+
+.trade-type {
+  background-color: white;
+  height: 69.78px;
+  border-radius: 15px;
+}
+.trade-type p {
+  font-family: Times New Roman;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #92a1ad;
+}
+.trade-type label {
+  font-family: Times New Roman;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #92a1ad;
+}
+@media (max-width: 768px) {
+  .trade-type label {
+    font-size: 10px;
+  }
+}
+
+.trade-duration {
+  background-color: white;
+  border-radius: 12px;
+}
+
+.month p {
+  font-family: Times New Roman;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0em;
+  color: #92a1ad;
+}
+.count {
+  border-radius: 9px;
+  background-color: #f6f2f2;
+}
+
+.up {
+  width: 8.181518554687504px;
+  height: 12.131100654602058px;
+}
+
+.time {
+  background-color: #f6f2f2;
+  border-radius: 9px;
+  border: 1px;
+}
+.time button {
+  width: 30.682199478149414px;
+  height: 30.99093246459961px;
+  border-radius: 6px;
+}
+.heading {
+  font-family: Times New Roman;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #92a1ad;
+}
+.heading img {
+  width: 20.32775115966797px;
+  height: 20.726072311401367px;
+}
+
+.radio label img {
+  width: 14.36052703857422px;
+  height: 14.79867935180664px;
+}
+.radio label {
+  font-family: Times New Roman;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+@media (max-width: 768px) {
+  .radio label {
+    font-size: 8px;
+  }
+}
+.my-input {
+  outline: none;
+  background-color: #f6f2f2;
+  border: transparent;
+}
+.child-2 {
+  margin-top: 8px;
+  padding-left: 48px;
+}
+@media (min-width: 768px) and (max-width: 992px) {
+  .child-2 {
+    padding: 0;
+  }
+}
+@media (max-width: 768px) {
+  .child-2 {
+    padding: 0;
+  }
+}

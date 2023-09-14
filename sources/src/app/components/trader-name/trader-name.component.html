@@ -1,0 +1,251 @@
+<div class="container text-center pb-3">
+  <div class="row">
+    <!--start trader duration  -->
+    <div class="col-lg-6 col-sm-12 trade-duration pt-3 pb-3 mb-2">
+      <div class="container">
+        <div class="month">
+          <p class="text-end mb-1">المورد متاح الى</p>
+          <div class="count">
+            <div class="row">
+              <div class="col-3">
+                <select
+                  class="form-select"
+                  [(ngModel)]="month"
+                  aria-label="Default select example"
+                >
+                  <optgroup>
+                    <option class="fs-1" selected disabled>شهر</option>
+                    <option>1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                  </optgroup>
+                </select>
+              </div>
+              <input
+                class="col-9 text-end pe-2 my-input"
+                type="number"
+                min="1"
+                max="12"
+                placeholder="شهر"
+                value="{{ month }}"
+              />
+            </div>
+          </div>
+        </div>
+        <!-- start time of seviece -->
+        <div class="">
+          <p class="text-end heading mt-2 mb-2">وقت المورد</p>
+          <div class="row text-center">
+            <div class="time col-6 p-0">
+              <div
+                *ngIf="selectTime"
+                class="d-flex justify-content-between align-items-center"
+              >
+                <button
+                  class="btn btn-primary d-flex align-items-center justify-content-center m-1"
+                >
+                  <img class="" src="/assets/minus.svg" alt="" srcset="" />
+                </button>
+                <p class="m-0">30 دقيقة</p>
+                <button
+                  type="button"
+                  class="btn btn-primary d-flex align-items-center justify-content-center m-1"
+                >
+                  <img src="/assets/add.svg" alt="" srcset="" />
+                </button>
+              </div>
+            </div>
+            <div class="col-6 p-2">
+              <div class="row radio">
+                <div class="form-check col-6 m-0 p-0">
+                  <div class="d-flex flex-row-reverse">
+                    <input
+                      (click)="productAppear()"
+                      class="form-check-input ms-1 me-1"
+                      type="radio"
+                      name="flexRadioDefault"
+                      id="flexRadioDefault2"
+                      checked
+                    />
+                    <label class="form-check-label m-0" for="flexRadioDefault2">
+                      الوقت ثابت
+                      <img
+                        class="ms-2"
+                        src="/assets/clock.svg"
+                        alt=""
+                        srcset=""
+                      />
+                    </label>
+                  </div>
+                </div>
+                <div class="form-check col-6 m-0 p-0">
+                  <div class="d-flex flex-row-reverse">
+                    <input
+                      (click)="productDisappear()"
+                      class="form-check-input ms-1"
+                      type="radio"
+                      name="flexRadioDefault"
+                      id="flexRadioDefault2"
+                      checked
+                    />
+                    <label class="form-check-label m-0" for="flexRadioDefault2">
+                      وقت الخدمة
+                      <img
+                        class="ms-2"
+                        src="/assets/box-time.svg"
+                        alt=""
+                        srcset=""
+                      />
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end time of seviece -->
+        <!-- start number of chickin -->
+
+        <div class="">
+          <p class="text-end heading mt-2 mb-2">
+            <img src="/assets/info-circle (1).svg" alt="" />
+            الحجز المتعدد
+          </p>
+          <div class="row text-center">
+            <div class="time col-lg-6 col-5 p-0">
+              <div *ngIf="selectPerson" class="d-flex flex-row-reverse">
+                <input
+                  class="text-end pe-2 mt-1 my-input fs-6"
+                  type="number"
+                  min="1"
+                  max="12"
+                  placeholder="موعد"
+                />
+              </div>
+            </div>
+            <div class="col-lg-6 col-7 p-2">
+              <div class="row radio">
+                <div class="form-check col-6 m-0 p-0">
+                  <div class="d-flex flex-row-reverse">
+                    <input
+                      (click)="personAppear()"
+                      class="form-check-input ms-1 me-1"
+                      type="radio"
+                      name="flexRadioDefault"
+                      id="flexRadioDefault2"
+                      checked
+                    />
+                    <label class="form-check-label m-0" for="flexRadioDefault2">
+                      حجزأكثر من شخص
+                      <img
+                        class="ms-0"
+                        src="/assets/Group 1000009043.svg"
+                        alt=""
+                        srcset=""
+                      />
+                    </label>
+                  </div>
+                </div>
+                <div class="form-check col-6 m-0 p-0">
+                  <div class="d-flex flex-row-reverse">
+                    <input
+                      (click)="personDisappear()"
+                      class="form-check-input ms-1"
+                      type="radio"
+                      name="flexRadioDefault"
+                      id="flexRadioDefault2"
+                      checked
+                    />
+                    <label class="form-check-label m-0" for="flexRadioDefault2">
+                      حجز واحد فقط
+                      <img
+                        class="ms-1"
+                        src="/assets/Vector.svg"
+                        alt=""
+                        srcset=""
+                      />
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end number of chickin -->
+      </div>
+    </div>
+    <!--end trader duration  -->
+
+    <!-- start trader information -->
+    <div class="col-lg-6 col-sm-12 child-2">
+      <div class="container trade-info pt-4 pb-5 ps-5 p-5">
+        <div class="trader row">
+          <div class="trade-name col-10 col-sm-8">
+            <p class="text-end">اسم الموارد</p>
+            <input
+              dir="rtl"
+              class="form-control form-control-lg"
+              type="text"
+              value="هيثم محمد"
+              aria-label=".form-control-lg example"
+            />
+          </div>
+          <div class="trder-photo col-2 col-sm-4 p-0">
+            <img
+              class="img-fluid"
+              src="assets/Image-100.svg"
+              alt=""
+              srcset=""
+            />
+          </div>
+        </div>
+      </div>
+      <!-- start trade type -->
+      <div
+        class="mt-5 trade-type d-flex justify-content-end align-items-center"
+      >
+        <div class="form-check">
+          <div class="d-flex flex-row-reverse">
+            <input
+              class="form-check-input ms-3 me-2"
+              type="radio"
+              name="flexRadioDefault"
+              id="flexRadioDefault2"
+              checked
+            />
+            <label class="form-check-label" for="flexRadioDefault2">
+              (أكثر من يوم)حجز مدة
+            </label>
+          </div>
+        </div>
+        <div class="form-check">
+          <div class="d-flex flex-row-reverse">
+            <input
+              class="form-check-input ms-3 me-2"
+              type="radio"
+              name="flexRadioDefault"
+              id="flexRadioDefault2"
+              checked
+            />
+            <label class="form-check-label" for="flexRadioDefault2">
+              حجز خلال يوم
+            </label>
+          </div>
+        </div>
+        <p class="ms-3 mb-0 pe-3">اختر نوع الموارد</p>
+      </div>
+      <!-- end trade type -->
+    </div>
+
+    <!-- end trader information -->
+  </div>
+</div>
